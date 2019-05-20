@@ -3,13 +3,22 @@ var app = express();
 
 app.set('view engine', 'ejs')
 
-app.get('/pauper', function(req, res){
-    res.render("formato/pauper");
-})
-app.get('/', function(req, res){
-    res.send("<html><body> Portal de noticias </body></html>");
+app.get('/formulario', function(req, res){
+    res.render("admin/form_add_noticia");
 })
 
+app.get('/noticias', function(req, res){
+    res.render("noticias/noticias");
+})
+
+
+app.get('/', function(req, res){
+    res.render("home/index");
+})
+
+app.get('/noticia', function(req, res){
+    res.render("noticias/noticia");
+})
 
 app.listen(3000, function(){
     console.log("Server is online on port 3000")
