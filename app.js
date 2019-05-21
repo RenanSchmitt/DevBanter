@@ -1,20 +1,13 @@
-var express = require('express');
-var app = express();
-
-app.set('view engine', 'ejs')
-
+var app = require('./config/server')
 app.get('/formulario', function(req, res){
     res.render("admin/form_add_noticia");
 })
 
-app.get('/noticias', function(req, res){
-    res.render("noticias/noticias");
-})
+var  rotaNoticias = require('./app/routes/noticias')(app)
+require('./app/routes/home')(app)
+require('./app/routes/formulario_inclusao_noticias')(app)
 
 
-app.get('/', function(req, res){
-    res.render("home/index");
-})
 
 app.get('/noticia', function(req, res){
     res.render("noticias/noticia");
