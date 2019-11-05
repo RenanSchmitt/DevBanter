@@ -1,13 +1,11 @@
 module.exports = function(app) {
     app.get('/posts', function(req, res){    
-     var connection = app.config.dbConnection();
+        var connection = app.config.dbConnection();
+        var postsModel = app.app.models.postsModel;
 
-        connection.query(`SELECT * FROM posts`, (err, result) => {
-            if (err) {
-                reject(err);
-                return;
-            }
-            res.render("posts/posts", {posts: result})
-        })
-    })
+        postsModel.getPosts(connection, function(err, result){
+
+            res.render("posts/posts", {posts: result});
+        });
+  });
 }
