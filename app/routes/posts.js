@@ -1,10 +1,8 @@
-const con = require('../../config/db')
-
 module.exports = function(app) {
-    let connection = con();
-    app.get('/posts', function(req, res){
-        connection.query(`SELECT * FROM posts`, (err, result) => {
+    app.get('/posts', function(req, res){    
+     var connection = app.config.dbConnection();
 
+        connection.query(`SELECT * FROM posts`, (err, result) => {
             if (err) {
                 reject(err);
                 return;
