@@ -59,7 +59,7 @@
 		
         <%if (posts == 0) { %>
             <p style="text-align: center; color: black; font-size: 400%">Não há posts registrados neste blog =/</p>
-        <% } %>
+        <% } else { %>
         <% posts.forEach(post => { %>
 			<div class="column is-8 is-offset-2">
            
@@ -93,7 +93,9 @@
 			   <!-- END ARTICLE -->
 				
 				</div>  
-		<% }) %>
+            <% })%>
+		<% }%>
+        
 
 	</section>
        
