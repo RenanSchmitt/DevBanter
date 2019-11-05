@@ -48,19 +48,19 @@
     </nav>
     <!-- END NAV -->
 
-    <section class="hero is-primary is-medium is-bold">
+    <!-- <section class="hero is-primary is-medium is-bold">
         <div class="hero-body">
             <div class="container has-text-centered">
                 <h1 class="title">SIT AND TAKE A COFFEE</h1>
             </div>
         </div>
-    </section>
+    </section> -->
     <section class="articles">
 		
-        <%if (posts == 0) { %>
-            <p style="text-align: center; color: black; font-size: 400%">Não há posts registrados neste blog =/</p>
+        <%if (postage == 0) { %>
+            <p style="text-align: center; color: black; font-size: 400%">ERROR 404</p>
         <% } else { %>
-        <% posts.forEach(post => { %>
+       
 			<div class="column is-8 is-offset-2">
            
 					<!-- START ARTICLE -->
@@ -93,7 +93,6 @@
 			   <!-- END ARTICLE -->
 				
 				</div>  
-            <% })%>
 		<% }%>
         
 
