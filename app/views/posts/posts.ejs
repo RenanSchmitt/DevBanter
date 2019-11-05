@@ -48,13 +48,16 @@
     <section class="hero is-primary is-medium is-bold">
         <div class="hero-body">
             <div class="container has-text-centered">
-                <h1 class="title">SIT AND TAKE A COFFE</h1>
+                <h1 class="title">SIT AND TAKE A COFFEE</h1>
             </div>
         </div>
     </section>
     <section class="articles">
 		
-		<% noticias.forEach(noticia => { %>
+        <%if (posts == 0) { %>
+            <p style="text-align: center; color: black; font-size: 400%">Não há posts registrados neste blog =/</p>
+        <% } %>
+        <% posts.forEach(post => { %>
 			<div class="column is-8 is-offset-2">
            
 					<!-- START ARTICLE -->
@@ -70,7 +73,7 @@
 									</figure>
 							  
 									<div class="media-content has-text-centered">
-										<p class="title article-title" style="color: white"><%= noticia.titulo %></p>
+										<p class="title article-title" style="color: white"><%= post.titulo %></p>
 										<div class="tags has-addons level-item">
 											<span class="tag is-rounded is-dark">@Renan Schmitt</span>
 										<span class="tag is-rounded">1 Novembro - 2019</span>
@@ -78,7 +81,7 @@
 								</div>
 							</div>
 							<div class="message-body">
-								 <%= noticia.conteudo %>
+								 <%= post.conteudo %>
 							</div>
 						</article>
 					</div>  

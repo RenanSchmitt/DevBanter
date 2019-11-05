@@ -4,7 +4,7 @@ app.get('/formulario', function(req, res){
     res.render("admin/form_add_noticia");
 })
 
-const  rotaNoticias = require('./app/routes/noticias')(app)
+const  rotaPosts = require('./app/routes/posts')(app)
 require('./app/routes/home')(app)
 require('./app/routes/formulario_inclusao_noticias')(app)
 
