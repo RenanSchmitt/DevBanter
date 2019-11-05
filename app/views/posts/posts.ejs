@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Renan Schmitt</title>
     
-    <link rel="shortcut icon" href="../../../images/logo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../../images/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <!-- Bulma Version 0.8.x-->
@@ -21,7 +21,7 @@
         <div class="container">
             <div class="navbar-brand">
                 <a class="navbar-item" href="../">
-                        <img src="../../../images/logo.png" alt="Logo">
+                        <img src="./../../images/logo.png" alt="Logo">
                         
                     </a>
                 <span class="navbar-burger burger" data-target="navbarMenu">
@@ -33,11 +33,14 @@
             <div id="navbarMenu" class="navbar-menu">
                 <div class="navbar-end">
 
-                    <a class="navbar-item  is-active" href="/noticias">
+                    <a class="navbar-item  is-active" href="/posts">
                            Posts
                     </a>
-                    <a class="navbar-item" href="https://www.linkedin.com/in/renanschmitt/">
-                        <button class="button is-link">Linkedin</button>
+                    <a class="navbar-item  " href="/posts">
+                        Categorias
+                 </a>
+                    <a class="navbar-item" href="/formulario">
+                        <button class="button is-link">Login</button>
                     </a>
                 </div>
             </div>
@@ -69,19 +72,19 @@
 							  
 							<div class="message-header">
 									<figure class="image is-128x128">
-										<img class="is-rounded" src="../../images/avatar.jpg">
+										<img class="is-rounded" src="./../../images/avatar.jpg">
 									</figure>
 							  
 									<div class="media-content has-text-centered">
-										<p class="title article-title" style="color: white"><%= post.titulo %></p>
+										<p class="title article-title" style="color: white"><%= post.title %></p>
 										<div class="tags has-addons level-item">
-											<span class="tag is-rounded is-dark">@Renan Schmitt</span>
-										<span class="tag is-rounded">1 Novembro - 2019</span>
+											<span class="tag is-rounded is-dark">@<%= post.author %></span>
+										<span class="tag is-rounded"><%= post.date %></span>
 									</div>
 								</div>
 							</div>
 							<div class="message-body">
-								 <%= post.conteudo %>
+								 <%= post.content %>
 							</div>
 						</article>
 					</div>  
