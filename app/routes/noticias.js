@@ -3,15 +3,13 @@ module.exports = function(app) {
     const con = require('../../config/db')
     
     app.get('/noticias', function(req, res){
-        con.query(`SELECT * FROM noticias`, (err, noticias) => {
+        con.query(`SELECT * FROM noticias`, (err, result) => {
 
             if (err) {
                 reject(err);
                 return;
             }
-            res.send(noticias)
+            res.render("noticias/noticias", {noticias: result})
         })
-
-        // res.render("noticias/noticias");
     })
 }
