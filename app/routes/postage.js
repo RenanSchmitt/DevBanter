@@ -12,7 +12,7 @@ module.exports = function(app) {
       var newpost = req.body;
       console.log(newpost.title)
       var connection = app.config.dbConnection();
-      var postsModel = app.app.models.postsModel;
+      var postsModel = new app.app.models.postsModel;
 
       postsModel.savePostage(newpost, connection,function(error, result){
         res.redirect("/posts")
