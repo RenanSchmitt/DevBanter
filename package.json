@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha --timeout 2000 --exit",
-    "start": "mocha --timeout 2000 --exit & nodemon app.js"
+    "dev": "mocha --timeout 2000 --exit & nodemon app.js",
+    "start": "node app.js"
   },
   "author": "Renan Schmitt",
   "license": "ISC",
