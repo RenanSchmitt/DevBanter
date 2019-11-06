@@ -7,4 +7,17 @@ module.exports = function(app) {
             res.render("posts/postage", {postage: result})
         });
     });
+
+    app.post('/savepost', function(req, res){    
+      var newpost = req.body;
+      console.log(newpost.title)
+      var connection = app.config.dbConnection();
+      var postsModel = app.app.models.postsModel;
+
+      postsModel.savePostage(newpost, connection,function(error, result){
+        res.redirect("/posts")
+    });
+
+    });
+ 
 }

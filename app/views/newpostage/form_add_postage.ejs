@@ -38,11 +38,11 @@
                     </a>
                     <a class="navbar-item  " href="/posts">
                         Categorias
-                 </a>
-                 <a class="navbar-item" href="/newpostage">
-                    <button class="button is-primary">Publicar</button>
-                </a>
-                    <a class="navbar-item" href="/formulario">
+                    </a>
+                    <a class="navbar-item" href="/newpostage">
+                      <button class="button is-primary">Publicar</button>
+                  </a>
+                    <a class="navbar-item" href="/login">
                         <button class="button is-link">Login</button>
                     </a>
                 </div>
@@ -58,47 +58,35 @@
             </div>
         </div>
     </section>
-    <section class="articles">
-		
-        <%if (posts == 0) { %>
-            <p style="text-align: center; color: black; font-size: 400%">Não há posts registrados neste blog =/</p>
-        <% } else { %>
-        <% posts.forEach(post => { %>
-			<div class="column is-8 is-offset-2">
-           
-					<!-- START ARTICLE -->
-				   
-					<div class="media">
-								
-					
-						<article class="message">
-							  
-							<div class="message-header">
-									<figure class="image is-128x128">
-										<img class="is-rounded" src="./../../images/avatar.jpg">
-									</figure>
-							  
-									<div class="media-content has-text-centered">
-										<p class="title article-title" style="color: white"><%= post.title %></p>
-										<div class="tags has-addons level-item">
-											<span class="tag is-rounded is-dark">@<%= post.author %></span>
-										<span class="tag is-rounded"><%= post.date %></span>
-									</div>
-								</div>
-							</div>
-							<div class="message-body">
-								 <%= post.content %>
-							</div>
-						</article>
-					</div>  
-				
-							   
-			   <!-- END ARTICLE -->
-				
-				</div>  
-            <% })%>
-		<% }%>
-        
+        <!-- Inicio formulário de nova postagem-->
+
+    <form action="/savepost" method="post">
+       
+        <div class="field">
+            <label class="label">Publicar</label>
+            <div class="control">
+                    <input class="input" name="title" type="text" placeholder="Digite o titulo da sua publicação aqui">
+            </div>
+            <BR>
+            <div class="control">
+                <textarea class="textarea" name="content" placeholder="Digite aqui o conteudo da sua publicação :D"></textarea>
+            </div>
+        </div>
+        <div class="field is-grouped">
+            <p class="control">
+                <button class="button is-light">
+                    Cancelar
+                </button>
+                </p>
+                <p class="control">
+                <input type="submit" class="button is-primary">
+
+            </p>
+        </div>
+    </form>
+        <!-- Fim formulário de nova postagem-->
+
+
 
 	</section>
        
