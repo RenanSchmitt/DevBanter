@@ -1,7 +1,11 @@
 module.exports = function(){
     
-    this.getPosts(connection, callback){
-        connection.query(`SELECT * FROM posts`, callback);
+    this.getPosts = function(connection, callback){
+        connection.query('select * from posts', callback);
     }
-    return this;
+
+    this.getPostage = function(connection, callback) {
+        connection.query('select * from posts where id = 3', callback);       
+    }
+    return this; 
 }

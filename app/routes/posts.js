@@ -3,9 +3,8 @@ module.exports = function(app) {
         var connection = app.config.dbConnection();
         var postsModel = app.app.models.postsModel;
 
-        postsModel.getPosts(connection, function(err, result){
-
+        postsModel.getPosts(connection,function(error, result){
             res.render("posts/posts", {posts: result});
         });
   });
-}
+};

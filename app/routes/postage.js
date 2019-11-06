@@ -1,13 +1,10 @@
 module.exports = function(app) {
     app.get('/postage', function(req, res){    
-     var connection = app.config.dbConnection();
+        var connection = app.config.dbConnection();
+        var postsModel = app.app.models.postsModel;
 
-        connection.query(`SELECT * FROM posts where id = 3`, (err, result) => {
-            if (err) {
-               console.log(err);
-                return;
-            }
+        postsModel.getPostage(connection,function(error, result){
             res.render("posts/postage", {postage: result})
-        })
-    })
+        });
+    });
 }
