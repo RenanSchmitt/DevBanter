@@ -58,20 +58,21 @@
             </div>
         </div>
     </section>
+
+    
     <section class="articles"  style=" margin-left: 5%;">
-		
+		       
+      
         <%if (posts == 0) { %>
             <p style="text-align: center; color: black; font-size: 400%">Não há posts registrados neste blog =/</p>
         <% } else { %>
         <% posts.forEach(post => { %>
+            <!-- START ARTICLE -->
+            <a href="postage/<%=post.id%>">
 			<div class="column is-8 is-offset-2">
            
-					<!-- START ARTICLE -->
 				   
-                <a href="postage/<%=post.id%>">
                     <div class="media">
-								
-					
 						<article class="message" style="width:100%">
 							  
 							<div class="message-header">
@@ -92,12 +93,9 @@
 							</div>
 						</article>
 					</div>  
-				
-							   
-			   <!-- END ARTICLE -->
-				
                 </div>
             </a>  
+            <!-- END ARTICLE -->
             <% })%>
 		<% }%>
         
@@ -111,8 +109,8 @@
                     <p><strong>Sit and take a Coffee </strong> by  <a href="https://www.linkedin.com/in/renanschmitt/">Renan Schmitt</a>.
                     
                     <br>
-                     <a href="https://bulma.io">
-                        <img src="https://bulma.io/public/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
+                    <a href="https://bulma.io">
+                        <img src="https://bulma.io/images/made-with-bulma.png" alt="Made with Bulma" width="128" height="24">
                     </a>
                 </p>
                 </div>
