@@ -6,7 +6,6 @@ if (dotenv.error) {
 }
 
 var connMySQL = function(){
-    console.log("Conexão com o banco de dados estabelecida. ");
     return mysql.createConnection({
         host: process.env.DB_HOST,
         user: process.env.DB_USER,
@@ -17,6 +16,5 @@ var connMySQL = function(){
 
 
 module.exports = function () {
-    "O autoload carregou o módulo de conexão com o bd"
     return connMySQL;
 } 
