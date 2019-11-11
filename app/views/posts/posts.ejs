@@ -17,13 +17,12 @@
 
 <body>
     <!-- START NAV -->
-    <nav class="navbar is-dark">
+    <nav class="navbar is-light">
         <div class="container">
             <div class="navbar-brand">
                 <a class="navbar-item" href="../">
-                        <img src="./../../public/images/logo.png" alt="Logo">
-                        
-                    </a>
+                    <img src="./../../public/images/logo.png" alt="Logo">
+                </a>
                 <span class="navbar-burger burger" data-target="navbarMenu">
                         <span></span>
                 <span></span>
@@ -38,9 +37,9 @@
                     </a>
                     <a class="navbar-item  " href="/posts">
                         Categorias
-                 </a>
-                 <% var login; %>
-                 <% if (login == "1") { %>
+                     </a>
+                 <% var login %>
+                 <% if (!login) { %>
                     <a class="navbar-item">
                         <img class="is-rounded" src="./../../public/images/user-image-default.png">
                      </a>
@@ -64,7 +63,7 @@
     </nav>
     <!-- END NAV -->
 
-    <section class="hero is-primary is-medium is-bold">
+    <section class="hero is-info is-medium is-bold">
         <div class="hero-body">
             <div class="container has-text-centered">
                 <h1 class="title">SIT AND TAKE A COFFEE</h1>
@@ -72,21 +71,16 @@
         </div>
     </section>
 
-    
     <section class="articles"  style=" margin-left: 5%;">
-		       
-      
         <%if (posts == 0) { %>
             <p style="text-align: center; color: black; font-size: 400%">Não há posts registrados neste blog =/</p>
         <% } else { %>
         <% posts.forEach(post => { %>
             <!-- START ARTICLE -->
-            <a href="postage?<%= post.id %>">
 			<div class="column is-8 is-offset-2">
-           
-				   
+                <a href="postage?<%= post.id %>">
                     <div class="media">
-						<article class="message" style="width:100%">
+						<article class="message is-info" style="width:100%">
 							  
 							<div class="message-header">
 									<figure class="image is-128x128">
@@ -105,9 +99,9 @@
 								 <%= post.content %>
 							</div>
 						</article>
-					</div>  
-                </div>
-            </a>  
+                    </div>  
+                </a>  
+            </div>
             <!-- END ARTICLE -->
             <% })%>
 		<% }%>

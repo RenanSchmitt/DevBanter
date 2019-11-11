@@ -16,42 +16,54 @@
 </head>
 
 <body>
-    <!-- START NAV -->
-    <nav class="navbar is-dark">
-        <div class="container">
-            <div class="navbar-brand">
-                <a class="navbar-item" href="../">
+   <!-- START NAV -->
+   <nav class="navbar is-light">
+      <div class="container">
+          <div class="navbar-brand">
+              <a class="navbar-item" href="../">
                   <img src="./../../public/images/logo.png" alt="Logo">
-                        
-                    </a>
-                <span class="navbar-burger burger" data-target="navbarMenu">
-                        <span></span>
-                <span></span>
-                <span></span>
-                </span>
-            </div>
-            <div id="navbarMenu" class="navbar-menu">
-                <div class="navbar-end">
+              </a>
+              <span class="navbar-burger burger" data-target="navbarMenu">
+                      <span></span>
+              <span></span>
+              <span></span>
+              </span>
+          </div>
+          <div id="navbarMenu" class="navbar-menu">
+              <div class="navbar-end">
 
-                    <a class="navbar-item  is-active" href="/posts">
-                           Posts
-                    </a>
-                    <a class="navbar-item  " href="/posts">
-                        Categorias
-                    </a>
-                    <a class="navbar-item" href="/newpostage">
+                  <a class="navbar-item  is-active" href="/posts">
+                         Posts
+                  </a>
+                  <a class="navbar-item  " href="/posts">
+                      Categorias
+                   </a>
+               <% var login %>
+               <% if (!login) { %>
+                  <a class="navbar-item">
+                      <img class="is-rounded" src="./../../public/images/user-image-default.png">
+                   </a>
+                   <a class="navbar-item" href="/newpostage">
                       <button class="button is-primary">Publicar</button>
                   </a>
-                    <a class="navbar-item" href="/login">
-                        <button class="button is-link">Login</button>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </nav>
-    <!-- END NAV -->
+               <% } else {  %>
 
-    <section class="hero is-primary is-medium is-bold">
+                  <a class="navbar-item" href="/newpostage">
+                      <button class="button is-primary">Publicar</button>
+                  </a>
+              
+                  <a class="navbar-item" href="/login">
+                      <button class="button is-link">Login</button>
+                  </a>
+
+             <% } %>
+              </div>
+          </div>
+      </div>
+  </nav>
+  <!-- END NAV -->
+
+    <section class="hero is-info is-medium is-bold">
         <div class="hero-body">
             <div class="container has-text-centered">
                 <h1 class="title">SIT AND TAKE A COFFEE</h1>
@@ -69,9 +81,7 @@
 					<!-- START ARTICLE -->
 				   
 					<div class="media">
-								
-					
-            <article class="message" style="width:100%">  
+            <article class="message  is-info" style="width:100%">  
 							<div class="message-header">
 									<figure class="image is-128x128">
                     <img class="is-rounded" src="./../../public/images/user-image-default.png">
