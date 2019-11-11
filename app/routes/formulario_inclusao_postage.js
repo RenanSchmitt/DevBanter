@@ -1,5 +1,5 @@
 module.exports = function(app) {
     app.get('/newpostage', function(req, res){
-        res.render("newpostage/form_add_postage");
-    })
+        app.app.controllers.posts.formulario_inclusao_postage(app, req, res);
+    });
 }

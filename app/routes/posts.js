@@ -1,10 +1,14 @@
 module.exports = function(app) {
     app.get('/posts', function(req, res){    
-        var connection = app.config.dbConnection();
-        var postsModel = new app.app.models.PostsDAO(connection);
+        app.app.controllers.posts.posts(app, req, res);
+    });
 
-        postsModel.getPosts(function(error, result){
-            res.render("posts/posts", {posts: result});
-        });
-  });
+    app.get('/postage', function(req, res){    
+        app.app.controllers.posts.postage(app, req, res);
+    });
+
+    app.post('/savepost', function(req, res){    
+        app.app.controllers.posts.savepost(app, req, res);
+    });
+
 };
