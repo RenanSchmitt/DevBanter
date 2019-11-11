@@ -39,12 +39,25 @@
                     <a class="navbar-item  " href="/posts">
                         Categorias
                  </a>
-                 <a class="navbar-item" href="/newpostage">
-                    <button class="button is-primary">Publicar</button>
-                </a>
+                 <% var login = 1 %>
+                 <% if (login == "1") { %>
+                    <a class="navbar-item">
+                        <img class="is-rounded" src="./../../public/images/user-image-default.png">
+                     </a>
+                     <a class="navbar-item" href="/newpostage">
+                        <button class="button is-primary">Publicar</button>
+                    </a>
+                 <% } else {  %>
+
+                    <a class="navbar-item" href="/newpostage">
+                        <button class="button is-primary">Publicar</button>
+                    </a>
+                
                     <a class="navbar-item" href="/login">
                         <button class="button is-link">Login</button>
                     </a>
+
+               <% } %>
                 </div>
             </div>
         </div>
