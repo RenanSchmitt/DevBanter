@@ -70,10 +70,17 @@
             </div>
         </div>
     </section>
+    
     <section class="articles">
 		
         <%if (postage == 0) { %>
-            <p style="text-align: center; color: black; font-size: 400%">ERROR 404</p>
+          <section class="hero is-danger is-medium is-bold">
+              <div class="hero-body">
+                  <div class="container has-text-centered">
+                      <h1 class="title">Lamentamos, mas a postagem a seguir não está mais disponivel :/</h1>
+                  </div>
+              </div>
+          </section>  
         <% } else { %>
        
 			<div class="column is-8 is-offset-2">
@@ -105,7 +112,7 @@
 			   <!-- END ARTICLE -->
 				
 				</div>  
-        <% }%>
+       
         
         <!-- BEGINS COMMENTS-->
         <article class="media" style="width:100%">
@@ -163,7 +170,7 @@
                 </div>
         </article>
          <!-- END COMMENTS-->
-
+         <% }%>
 	</section>
        
         <script async type="text/javascript" src="../js/bulma.js"></script>
