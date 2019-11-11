@@ -11,4 +11,7 @@ module.exports = function(app) {
         app.app.controllers.posts.savepost(app, req, res);
     });
 
+    app.get('/newpostage', function(req, res){
+        app.app.controllers.posts.include_new_postage(app, req, res);
+    });
 };

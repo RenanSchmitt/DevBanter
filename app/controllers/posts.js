@@ -1,4 +1,4 @@
-module.exports.formulario_inclusao_postage = function (app, req, res){
+module.exports.include_new_postage = function (app, req, res){
     res.render("newpostage/form_add_postage");
 }
 
