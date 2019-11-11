@@ -2,9 +2,7 @@ module.exports = function(app) {
     app.get('/postage', function(req, res){    
         var connection = app.config.dbConnection();
         var postsModel = new app.app.models.PostsDAO(connection);
-        let idProd = req.url;
-        idProd = idProd.slice(9, 30);
-        console.log(idProd)
+        let idProd = req.url.slice(9, 30);    
         postsModel.getPostage(idProd, function(error, result){
             res.render("posts/postage", {postage: result})
         });
