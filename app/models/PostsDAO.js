@@ -19,6 +19,11 @@ PostsDAO.prototype.savePostage = function(newpost, callback){
     var post = `INSERT INTO posts (title, content, date, author, category) VALUES ('${newpost.title}','${newpost.content}', NOW(), 'Renan Schmitt','Tecnologia')`;       
     this._connection.query(post, callback);       
 }
+PostsDAO.prototype.newComment = function(newcomment, callback){
+    var date = new Date();
+    var comment = `INSERT INTO comments (author, content, id_post) VALUES ('Admin','${newcomment.commentText}',${newcomment.id_post})`;
+    this._connection.query(comment, callback);       
+}
 
 module.exports = function(){
     return PostsDAO;

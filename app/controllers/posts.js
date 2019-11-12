@@ -11,6 +11,15 @@ module.exports.savepost =  function (app, req, res){
     });
 }
 
+module.exports.newComment =  function (app, req, res){
+    var newComment = req.body;
+    var connection = app.config.dbConnection();
+    var postsModel = new app.app.models.PostsDAO(connection);
+    postsModel.newComment(newComment ,function(error, result){
+        res.redirect(`/postage?${newComment.id_post}`); 
+    });
+}
+
 module.exports.posts =  function (app, req, res){
     var connection = app.config.dbConnection();
     var postsModel = new app.app.models.PostsDAO(connection);
@@ -26,7 +35,7 @@ module.exports.postage =  function (app, req, res){
     let idProd = req.url.slice(9, 30);    
     postsModel.getPostage(idProd, function(error, result){
         postsModel.getCommentsPostage(idProd, function(error, result2){
-        res.render("posts/postage", {postage: result, comments: result2})
+            res.render("posts/postage", {postage: result, comments: result2})
         });
     });
 }

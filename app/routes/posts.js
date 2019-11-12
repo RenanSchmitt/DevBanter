@@ -14,4 +14,8 @@ module.exports = function(app) {
     app.get('/newpostage', function(req, res){
         app.app.controllers.posts.include_new_postage(app, req, res);
     });
+
+    app.post('/newcomment', function(req, res){
+        app.app.controllers.posts.newComment(app, req, res);
+    });
 };
