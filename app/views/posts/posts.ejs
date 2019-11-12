@@ -73,8 +73,10 @@
 
     <section class="articles"  style=" margin-left: 5%;">
         <%if (posts == 0) { %>
-            <div class="container has-text-centered">
-                <h1 class="title">Lamentamos, mas parece que não há posts registrados =/</h1>
+            <div class="hero-body">
+                <div class="container has-text-centered">
+                    <h1 class="title">Lamentamos, mas parece que não há posts registrados =/</h1>
+                </div>
             </div>
         <% } else { %>
         <% posts.forEach(post => { %>
