@@ -105,47 +105,51 @@
 							<div class="message-body">
 								 <%= postage[0].content %>
               </div>
+
+      <% comments.forEach(comment => { %>
                <!-- BEGINS COMMENTS-->
       
         <article class="media">
                 <figure class="media-left">
                   <p class="image is-64x64">
-                    <img class=" is-rounded" src="https://farm9.staticflickr.com/8478/8219608433_54feff5dd3_b.jpg">
+                    <img class=" is-rounded" src="./../../public/images/user-image-default.png">
                   </p>
                 </figure>
                 <div class="media-content">
                   <div class="content">
                     <p>
-                      <strong>Barbara Middleton</strong>
+                      <strong><%= comment.author %></strong>
                       <br>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis porta eros lacus, nec ultricies elit blandit non. Suspendisse pellentesque mauris sit amet dolor blandit rutrum. Nunc in tempus turpis.
+                      <%= comment.content %>
                       <br>
-                      <small><a>Reply</a> · 3 hrs</small>
+                      <small> 3 hrs</small>
                     </p>
                   </div>
         </article>
 
  
-        <article class="media">
-                <figure class="media-left">
-                  <p class="image is-64x64">
-                    <img class="is-rounded" src="./../../public/images/user-image-default.png">
-                  </p>
-                </figure>
-                <div class="media-content">
-                  <div class="field">
-                    <p class="control">
-                      <textarea class="textarea" placeholder="Add a comment..."></textarea>
-                    </p>
-                  </div>
-                  <div class="field">
-                    <p class="control">
-                      <button class="button">Post comment</button>
-                    </p>
-                  </div>
-                </div>
-        </article>
+       
          <!-- END COMMENTS-->
+         <% })%>
+         <article class="media">
+            <figure class="media-left">
+              <p class="image is-64x64">
+                <img class="is-rounded" src="./../../public/images/user-image-default.png">
+              </p>
+            </figure>
+            <div class="media-content">
+              <div class="field">
+                <p class="control">
+                  <textarea class="textarea" placeholder="Add a comment..."></textarea>
+                </p>
+              </div>
+              <div class="field">
+                <p class="control">
+                  <button class="button">Comentar</button>
+                </p>
+              </div>
+            </div>
+           </article>
 						</article>
 					</div>  
 				

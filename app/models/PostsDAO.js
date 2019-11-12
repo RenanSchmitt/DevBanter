@@ -10,6 +10,10 @@ PostsDAO.prototype.getPostage = function(idProd, callback) {
     this._connection.query(`select * from posts where id = ${idProd}`, callback);       
 }
 
+PostsDAO.prototype.getCommentsPostage = function(idProd, callback) {
+    this._connection.query(`select * from comments where id_post = ${idProd}`, callback);       
+}
+
 PostsDAO.prototype.savePostage = function(newpost, callback){
     var date = new Date();
     var post = `INSERT INTO posts (title, content, date, author, category) VALUES ('${newpost.title}','${newpost.content}', NOW(), 'Renan Schmitt','Tecnologia')`;       

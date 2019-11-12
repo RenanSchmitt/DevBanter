@@ -6,9 +6,8 @@ module.exports.savepost =  function (app, req, res){
     var newpost = req.body;
     var connection = app.config.dbConnection();
     var postsModel = new app.app.models.PostsDAO(connection);
-    
     postsModel.savePostage(newpost ,function(error, result){
-        res.redirect("/posts");
+        res.redirect("/posts")
     });
 }
 
@@ -25,8 +24,9 @@ module.exports.postage =  function (app, req, res){
     var connection = app.config.dbConnection();
     var postsModel = new app.app.models.PostsDAO(connection);
     let idProd = req.url.slice(9, 30);    
-    
     postsModel.getPostage(idProd, function(error, result){
-        res.render("posts/postage", {postage: result})
+        postsModel.getCommentsPostage(idProd, function(error, result2){
+        res.render("posts/postage", {postage: result, comments: result2})
+        })
     });
 }
