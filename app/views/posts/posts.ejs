@@ -73,7 +73,9 @@
 
     <section class="articles"  style=" margin-left: 5%;">
         <%if (posts == 0) { %>
-            <p style="text-align: center; color: black; font-size: 400%">Lamentamos, mas parece que não há posts registrados =/</p>
+            <div class="container has-text-centered">
+                <h1 class="title">Lamentamos, mas parece que não há posts registrados =/</h1>
+            </div>
         <% } else { %>
         <% posts.forEach(post => { %>
             <!-- START ARTICLE -->
