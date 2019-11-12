@@ -27,6 +27,6 @@ module.exports.postage =  function (app, req, res){
     postsModel.getPostage(idProd, function(error, result){
         postsModel.getCommentsPostage(idProd, function(error, result2){
         res.render("posts/postage", {postage: result, comments: result2})
-        })
+        });
     });
 }
